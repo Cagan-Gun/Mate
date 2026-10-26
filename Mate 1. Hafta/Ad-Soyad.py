@@ -1,0 +1,1 @@
+print(f"Merhaba {input("Isminiz? ")} {input("Soyadiniz? ")} ({input("Nerelisiniz? ")}) hosgeldiniz")
