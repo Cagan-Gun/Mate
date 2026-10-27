@@ -20,8 +20,27 @@ def harf_notu_hesapla(vize,final):
     else:
         return [ortalama,"FF"]
 
-vize_not = int(input("Vize notu: "))
-final_not = int(input("Final notu: "))
+while(True):
+    error = False
+    vize_not = -1
+    final_not = -1
+
+    try:
+        vize_not = int(input("Vize notu: "))
+        final_not = int(input("Final notu: "))
+        
+    except ValueError:
+        error = True
+        print("Sayi giriniz!")
+
+    if not error:
+        if vize_not in range(0,101):
+            if final_not in range(0,101):
+                break
+            else:
+                print("Final notu 0 ile 100 arasinda olmalidir!")
+        else:
+            print("Vize notu 0 ile 100 arasinda olmalidir!")
 
 ortalama = harf_notu_hesapla(vize_not,final_not)[0]
 harf_notu = harf_notu_hesapla(vize_not,final_not)[1]
